@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BiLSTM_NER",
+    "\\BiLSTM_NER\\bilstm_model",
+    "\\Tfidf_Classification"
+  ],
+  "SelectedNode": "\\Tfidf_Classification\\QAtfidf.py",
+  "PreviewInSolutionExplorer": false
+}

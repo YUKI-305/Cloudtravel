@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/BiLSTM_NER/dataset/question_mark.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Tfidf_Classification/dataset/question.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/question.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/question_mark.csv" charset="GBK" />
+  </component>
+</project>
