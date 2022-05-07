@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Cloudtravel">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cloudtravel</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Cloudtravel" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.27.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Cloudtravel/web/Web" />
+      <element id="library" level="project" name="jstl-1.2" />
+    </root>
+  </artifact>
+</component>

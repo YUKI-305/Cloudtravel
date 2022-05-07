@@ -1,0 +1,512 @@
+@CHARSET "UTF-8";
+
+body ,#page-container {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-family: Candara, "Microsoft YaHei", Arial, sans-serif;
+	text-align: center;
+	color: black;
+	font-size: 16px;
+	background: white;
+}
+* {
+	box-sizing: border-box;
+	transition: .25s all ease;
+}
+
+#top_logo {
+	position:absolute;
+	height: 80px;
+	width: 100%;
+	background: url(../images/logo.png) no-repeat 4% 70%;
+	background-size: auto 45px;
+	font-size: 12px;
+	z-index: 9;
+}
+
+#right-top {
+	padding:16px;
+	width: 100%;
+	height: 80px;
+	float: right;
+	text-align: right;
+}
+#right-top a {
+	text-decoration:none;
+	display:block;
+	height:100%;
+	weight:100%;
+}
+#t1 {
+	margin-top: 4px;
+	margin-right: 12px;
+	vertical-align: top;
+	width: 450px;
+	height: 44px;
+	line-height: 40px;
+	padding: 4px 16px;
+	border: 0 ;
+	border-radius: 4px;
+}
+
+#right-top ul {
+	margin:0;
+	padding:0;
+	list-style-type: none;
+	display:inline-block;
+}
+#right-top li,#right-top li:hover {
+	float:left;
+	width: 30px;
+	height:50px;
+	background-repeat: no-repeat;
+	background-size:auto 25px;
+	background-position:50% 50%;
+	margin:0 12px;
+	cursor:pointer;
+}
+#search {
+	background-image:url(../images/nav/search1.svg);
+}
+#search:hover {
+	background-image:url(../images/nav/search2.svg);
+}
+#home {
+	background-image:url(../images/nav/home1.svg);
+}
+#home:hover {
+	background-image:url(../images/nav/home2.svg);
+}
+#community {
+	background-image:url(../images/nav/community1.svg) ;
+}
+#community:hover {
+	background-image:url(../images/nav/community2.svg);
+}
+#shop {
+	background-image:url(../images/nav/cart2.svg);
+}
+#account {
+	background-image:url(../images/nav/account1.svg);
+}
+#account:hover {
+	background-image:url(../images/nav/account2.svg);
+}
+
+
+.banner {
+	position:absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height:500px;
+	z-index: 0;
+}
+.banner .item {
+	display: none;/*隐藏元素*/
+	position: absolute;/* 绝对定位*/
+	width: 100%;
+	height: 500px;
+	top: 0;
+	left: 0;
+}
+
+.banner ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.lunbo {
+	width:100%;
+	height:500px;
+}
+/*左右按钮的属性设置*/
+.lr-tab .btn {
+	position:absolute;
+	top:215px;
+	width:41px;
+	height:69px;
+	background:url("../images/banner/btn.png");
+}
+.lr-tab .left {
+	left:0;
+	background-position-x:-83px;
+}
+.lr-tab .right {
+	right:0;
+	background-position-x:-125px;
+}
+/*左右按钮触碰事件*/
+.lr-tab .left:hover{
+	background-position-x: 0;
+}
+.lr-tab .right:hover{
+	background-position-x: -41px;
+}
+/*圆形按钮属性设定*/
+.tab-btn{
+	position: absolute;
+	right: 56px;
+	bottom: 20px;
+	width: 120px;
+	height: 32px;
+
+}
+.tab-btn .btn{
+	float: left;
+	width: 8px;
+	height: 8px;
+	background: #008B00;
+	border: 2px solid #ffffff;/*边框*/
+	border-radius: 50%;
+	margin-left: 12px;
+}
+/*圆形按钮触碰事件*/
+.tab-btn .btn:hover,.tab-btn .active{
+	background: #e4e4e4;
+	border-color:#7f7f7f;
+}
+
+
+#main-nav {
+	padding: 528px 0 12px;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#main-nav ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#main-nav li a {
+	color: #1a1a1a;
+	margin-right: 32px;
+	text-decoration: none;
+}
+
+#main-nav li a:hover { /*鼠标移动上去的时候，导航栏样式改变*/
+	color: #008B00;
+	text-decoration: none;
+	transition: .15s all ease;
+}
+
+.dropdown {
+	float: left;
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown .dropbtn:after {
+	content: '';
+	display: inline-block;
+	height: 4px;
+	background-color: rgb(0, 0, 0);
+	position: absolute;
+	right: 100%;
+	bottom: -1px;
+	left: 0;
+	border-radius: 50%;
+	transition: .35s all ease;
+}
+.dropdown .dropbtn:hover:after,.dropdown:hover .dropbtn:after{
+	background-color:#008B00;
+	height: 2px;
+	right: 24px;
+	bottom: -1px;
+	border-radius: 0;
+	transition: .4s all ease;
+}
+
+
+#content{
+	margin: 40px 0;
+}
+
+.line {
+	float: right;
+	width: 64%;
+	margin-top: 48px;
+	margin-right: 3%;
+	border-top: 2px solid black;
+}
+.first-title {
+	position: relative;
+	width: 33%;
+	font-size:35px;
+	font-weight: bold;
+	text-align:left;
+	padding: 20px 3%;
+}
+.second-title {
+	font-size: 17px;
+	line-height: 52px;
+	text-align:left;
+	padding: 0 140px;
+}
+.pen-note {
+	position: absolute;
+	top:2px;
+	left: -12px;
+	height:100%;
+	width: 100%;
+	z-index: 2;
+	opacity: 0.8;
+	background: url(../images/shop_home/note.png) no-repeat center;
+	background-size: 68px 68px;
+}
+#c_Souvenir {
+	height: 600px;
+}
+
+#Souvenir_Card {
+	height:400px;
+	width: 100%;
+	color: white;
+	text-align: left;
+	padding: 10px 2%;
+}
+.card {
+	position: relative;
+	float: left;
+	width: 20%;
+	height: 88%;
+	margin:0 2.5%;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	border-radius: 3%;
+	box-shadow: 0 8px 16px #414141;
+	z-index: 0;
+}
+
+.card-mask {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0);
+	opacity: 0.12;
+	border-radius: 3%;
+	z-index:2;
+}
+.card:hover .card-mask {
+	opacity: 0.4;
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-border {
+	position: absolute;
+	top: 2%;
+	left:2%;
+	width: 96%;
+	height: 96%;
+	z-index: 1;
+	border:1px solid rgba(255, 255, 255, 0.68);
+	border-radius: 3%;
+}
+
+.card-content {
+	padding: 20px;
+	position: absolute;
+	bottom: 40%;
+	color: #fff;
+	font-family: Candara, FangSong, serif;
+	transform: translateY(40%);
+	transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+	z-index: 4;
+	cursor: pointer;
+}
+
+.card-content .card-title {
+	position: relative;
+	font-size: 36px;
+	font-weight: 700;
+	text-shadow: rgba(0,0,0, 0.9) 0 10px 10px;
+}
+
+.card-content .card-text{
+	position: relative;
+	opacity: 0;
+	font-size: 20px;
+	text-shadow: rgba(0,0,0) 0 2px 3px;
+	transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-content:after{
+	content: '';
+	position: absolute;
+	top: 0; left: 0;
+	z-index: 4;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom, transparent 0%, rgb(0, 0, 0) 100%);
+	background-blend-mode: overlay;
+	opacity: 0;
+	transform: translateY(100%);
+	transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card:hover .card-content{
+	transform: translateY(0);
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card:hover .card-text{
+	opacity: 1;
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card:hover  .card-info:after {
+	transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+	opacity: 1;
+	transform: translateY(0);
+}
+.card:hover {
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+	box-shadow:
+			rgba(255,255,255, 0.2) 0 0 40px 5px,
+			rgba(255,255,255, 1) 0 0 0 1px,
+			rgba(0, 0, 0, 0.66) 0 30px 60px 0,
+			inset rgba(51, 50, 50, 0.4) 0 0 0 5px,
+			inset rgb(255, 255, 255,0.4) 0 0 0 6px;
+}
+
+
+.painting-card {
+	height: 500px;
+	margin: 20px 100px 80px;
+	font-family: Candara, FangSong, serif;
+	box-shadow: 6px 6px 24px #505050;
+}
+.paint-left {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
+}
+.paint-right {
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin:0 auto;
+}
+.paint-right h1 {
+	font-weight: 600;
+}
+.paint-right p{
+	color: rgba(47, 49, 47, 0.81);
+	margin-top: 24px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+
+#Seasons {
+	margin-top: 40px;
+	height:450px;
+	background-color: rgba(38, 96, 57, 0.35);
+	color: gray;
+	text-align: center;
+	font-family: sans-serif;
+}
+#Seasons div {
+	width: 16vw;
+	height: 60vh;
+	background: red no-repeat 50% 50%;
+	background-size: auto 100%;
+	display: inline-block;
+	margin: 0 20px;
+	filter: grayscale(1) opacity(0.1) contrast(200%);
+	transition: 0.5s;
+	transform: skewY(-10deg);
+	z-index: -1;
+}
+
+#Seasons .highlight {
+	filter: grayscale(0) opacity(1);
+	transform: scale(1.1);
+	box-shadow: 0 25px 50px black;
+	z-index: 100;
+}
+
+#Seasons div:nth-child(1) {
+	background-color: dodgerblue;
+	background-image: url("../images/banner/spring01.png");
+}
+
+#Seasons div:nth-child(2) {
+	background-color: red;
+	background-image: url("../images/banner/summer01.png");
+}
+#Seasons div:nth-child(3) {
+	background-color: purple;
+	background-image: url("../images/banner/autumn01.png");
+}
+#Seasons div:nth-child(4) {
+	background-color: darkorange;
+	background-image: url("../images/banner/winter01.png");
+	}
+
+#Seasons div:nth-child(1):after,
+#Seasons div:nth-child(2):after,
+#Seasons div:nth-child(3):after,
+#Seasons div:nth-child(4):after {
+	content: "NAME";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 900;
+	color: white;
+	text-shadow: 3px 3px #555;
+}
+#Seasons div:nth-child(1):after {
+	content: "Spring";
+}
+#Seasons div:nth-child(2):after {
+	content: "Summer";
+}
+#Seasons div:nth-child(3):after {
+	content: "Autumn";
+}
+#Seasons div:nth-child(4):after {
+	content: "Winter";
+}
+
+
+
+#footer {
+	height: 66px;
+	text-align:left;
+	font-family: Tahoma, Arial, Helvetica, Sans-serif, serif;
+	font-size: 10px;
+	color: #5b5b5b;
+	border-top: 1px solid #efefef;
+	padding: 13px 25px;
+	line-height: 18px;
+}
+
+#footer a {
+	color: #5b5b5b;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #db6d16;
+}
+
+#altnav {
+	float: right;
+	width: 350px;
+	text-align: right;
+}

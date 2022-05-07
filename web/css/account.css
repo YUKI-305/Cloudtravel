@@ -1,0 +1,218 @@
+@CHARSET "UTF-8";
+body ,#page-container {
+    padding: 0;
+    margin: 0;
+    background: #F6F6F6;
+    font-family: Microsoft YaHei, 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    transition: .25s all ease;
+}
+
+.login-container {
+    position: relative;
+    margin: 88px 10% 0;
+    padding: 20px 32px;
+    width: 80%;
+    border-radius: 1.5%;
+    background: white;
+    box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.75);
+    z-index: 0;
+}
+#profile {
+    display: inline-flex;
+    margin: 12px auto 24px;
+}
+#profile-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+#profile-name {
+    margin: 0 24px;
+    line-height: 92px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    padding: 24px 0;
+}
+
+.item-left {
+    float: left;
+    width: 19%;
+    height: 50px;
+}
+
+.item-right .tips {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #818181;
+}
+
+.item-right .number {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #333;
+}
+
+.item-right a {
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #4EB7BA;
+}
+
+#weibo, #qq {
+    color: #000000;
+    margin-right: 40px;
+    font-weight: 400;
+}
+
+.button {
+    display: block;
+    width: 90%;
+    margin: 2rem 2rem;
+    padding: .75rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+#top_logo {
+    position: absolute;
+    top: 0;
+    height: 68px;
+    width: 100%;
+    background: white url(.././images/logo.png) 3% 50% no-repeat;
+    background-size: auto 44px;
+    font-size: 12px;
+    z-index: 9;
+}
+
+#right-top {
+    width: 100%;
+    height: 100%;
+    float: right;
+    text-align: right;
+}
+
+#right-top a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    weight: 100%;
+}
+
+#t1 {
+    width: 450px;
+    height: 44px;
+    vertical-align: top;
+    line-height: 40px;
+    margin: 12px 0;
+    padding: 4px 16px;
+    border: 0;
+    border-radius: 4px;
+    color: black;
+    background-color: #F2F2F2;
+}
+
+#right-top ul {
+    top: 50%;
+    height: 100%;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#right-top li, #right-top li:hover {
+    float: left;
+    width: 30px;
+    height: 44px;
+    background-repeat: no-repeat;
+    background-size: auto 25px;
+    background-position: 50% 50%;
+    margin: 0 12px;
+    cursor: pointer;
+    transition: 0.15s all ease;
+}
+
+#search {
+    background-image: url(../images/nav/search1.svg);
+}
+
+#search:hover {
+    background-image: url(../images/nav/search2.svg);
+}
+
+#home {
+    background-image: url(../images/nav/home1.svg);
+}
+
+#home:hover {
+    background-image: url(../images/nav/home2.svg);
+}
+
+#community {
+    background-image: url(../images/nav/community1.svg);
+}
+
+#community:hover {
+    background-image: url(../images/nav/community2.svg);
+}
+
+#shop {
+    background-image: url(../images/nav/cart1.svg);
+}
+
+#shop:hover {
+    background-image: url(../images/nav/cart2.svg);
+}
+#account {
+    background-image: url(../images/nav/account2.svg);
+}
+
+
+#footer {
+    height: 66px;
+    margin-top: 32px;
+    padding: 13px 25px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    text-align:left;
+    line-height: 18px;
+    font-size: 10px;
+    color: #5b5b5b;
+    border-top: 1px solid #efefef;
+}
+
+#footer a {
+    color: #5b5b5b;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #db6d16;
+}
+
+#altnav {
+    float: right;
+    width: 350px;
+    text-align: right;
+}

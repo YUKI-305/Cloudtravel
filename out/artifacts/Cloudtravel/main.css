@@ -1,0 +1,142 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background-size: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+#top_logo {
+    position:fixed;
+    top: 0;
+    height: 68px;
+    width: 100%;
+    background: white url(./image/logo.png) 3% 50% no-repeat;
+    background-size: auto 44px;
+    z-index: 9;
+    font-size: 12px;
+}
+
+#right-top {
+    width: 100%;
+    height: 100%;
+    float: right;
+    text-align: right;
+}
+#right-top a {
+    text-decoration:none;
+    display:block;
+    height:100%;
+    weight:100%;
+}
+
+#t1 {
+    width: 450px;
+    height: 44px;
+    vertical-align: top;
+    line-height: 40px;
+    margin: 12px 0;
+    padding: 4px 16px;
+    border: 0 ;
+    border-radius: 4px;
+    color: black;
+    background-color: #F2F2F2;
+}
+
+#right-top ul {
+    top: 50%;
+    height: 100%;
+    padding: 0;
+    list-style-type: none;
+    display:inline-block;
+}
+#right-top li,#right-top li:hover {
+    float:left;
+    width: 30px;
+    height: 44px;
+    background-repeat: no-repeat;
+    background-size:auto 25px;
+    background-position:50% 50%;
+    margin:0 12px;
+    cursor:pointer;
+    transition: 0.15s all ease;
+}
+#search {
+    background-image:url(./image/nav/search1.svg);
+}
+#search:hover {
+    background-image:url(./image/nav/search2.svg);
+}
+#home {
+    background-image:url(./image/nav/home1.svg);
+}
+#home:hover {
+    background-image:url(./image/nav/home2.svg);
+}
+#community {
+    background-image:url(./image/nav/community1.svg) ;
+}
+#community:hover {
+    background-image:url(./image/nav/community2.svg);
+}
+#shop {
+    background-image:url(./image/nav/cart1.svg);
+}
+#shop:hover {
+    background-image:url(./image/nav/cart2.svg);
+}
+#account {
+    background-image:url(./image/nav/account1.svg);
+}
+#account:hover {
+    background-image:url(./image/nav/account2.svg);
+}
+#container{
+    width: 100%;
+    height: 740px;
+    border: 1px solid #DCDCDC;
+}
+/*修改官方样式表*/
+
+/*地图标题*/
+.BMap_bubble_title {
+
+}
+/* 消息内容 */
+.BMap_bubble_content {
+
+}
+/* 内容 */
+.BMap_pop div:nth-child(9) {
+    top:35px !important;
+    border-radius:7px;
+}
+/* 左上角删除按键 */
+.BMap_pop img {
+    top:43px !important;
+    left:215px !important;
+}
+.BMap_top {
+    display:none;
+}
+.BMap_bottom {
+    display:none;
+}
+.BMap_center {
+    display:none;
+}
+/* 隐藏边角 */
+.BMap_pop div:nth-child(1) div {
+    display:none;
+}
+.BMap_pop div:nth-child(3) {
+    display:none;
+}
+.BMap_pop div:nth-child(7) {
+    display:none;
+}
