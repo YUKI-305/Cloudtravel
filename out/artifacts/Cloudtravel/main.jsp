@@ -18,6 +18,38 @@
     <script type="text/javascript" src="//api.map.baidu.com/library/TrackAnimation/src/TrackAnimation_min.js"></script>
 </head>
 <body>
+<div class="talk-AI-box">
+    <img class="talk-AI-img" src="image/nav/img-ai.png" alt="AI">
+</div>
+<div class="chat">
+    <div class="chat-header clearfix">
+        <div class="chat-name">旅行助手乔乔子</div>
+        <img class="img-dismiss" src="images/nav/like1.svg" alt="dismiss" title="dismiss">
+    </div>
+
+    <div class="chat-history">
+        <ul>
+            <li>
+                <img class="pic-me" src="images/banner/spring01.png" alt="我">
+                <div class="message my-message">
+                    让我看看是哪个小可爱又来了呀？
+                </div>
+            </li>
+
+            <li class="clearfix">
+                <div class="message other-message float-right">
+                    原来是我的好大儿雯铎呀？他来干什么了呢，让我猜一猜，她一定是来偷偷充电啦！
+                </div>
+                <img class="pic-AI" src="images/login/profile.png" alt="乔乔子">
+            </li>
+        </ul>
+    </div> <!-- end chat-history -->
+
+    <div class="chat-message clearfix">
+        <textarea name="message-to-send" id="message-to-send" placeholder="你想要问什么呢？" rows="2"></textarea>
+        <button class="button-send">发送</button>
+    </div> <!-- end chat-message -->
+</div>
 <%
     String accountHref = "Account.jsp";
     if(session.getAttribute("username") == null)
@@ -452,6 +484,126 @@ for (var j = 0; j < txtMenuItem.length; j++) {
     menu.addItem(new BMapGL.MenuItem(txtMenuItem[j].text, txtMenuItem[j].callback, 100));
 }
 map.addContextMenu(menu);
+
+</script>
+
+<script id="message-template" type="text/x-handlebars-template">
+    <li class="clearfix">
+        <img class="pic-me" src="images/banner/spring01.png" alt="我">
+        <div class="message my-message">
+            {{messageOutput}}
+        </div>
+    </li>
+</script>
+
+<script id="message-response-template" type="text/x-handlebars-template">
+    <li class="clearfix">
+        <div class="message other-message float-right">
+            {{response}}
+        </div>
+        <img class="pic-AI" src="images/login/profile.png" alt="乔乔子">
+    </li>
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script>
+<script id="rendered-js">
+    (function () {
+
+        var chat = {
+            messageToSend: '',
+            messageResponses: [
+                '今天吃什么呢？肉夹馍还是小火锅，小孩子才做选择，乔乔子都要！',
+                '明天会降温哦，要记得多穿一点衣服！',
+                '冉冉子，你是我的神！',
+                '让我看看是谁又睡懒觉了？哦，原来是我们的拂晓女鹅。快看，雯铎又把她的小jio露出来了~',
+                '你饿了吗？乔乔子好饿呀！',
+                '请加入我们的团队，一起开始饥荒吧，high到天亮，耶耶耶！'
+            ],
+            init: function () {
+                this.cacheDOM();
+                this.bindEvents();
+                this.render();
+            },
+            cacheDOM: function () {
+                this.$chatHistory = $('.chat-history');
+                this.$button = $('.button-send');
+                this.$textarea = $('#message-to-send');
+                this.$chatHistoryList = this.$chatHistory.find('ul');
+            },
+            bindEvents: function () {
+                this.$button.on('click', this.addMessage.bind(this));
+                this.$textarea.on('keyup', this.addMessageEnter.bind(this));
+            },
+            render: function () {
+                this.scrollToBottom();
+                if (this.messageToSend.trim() !== '') {
+                    var template = Handlebars.compile($("#message-template").html());
+                    var context = {
+                        messageOutput: this.messageToSend,
+                        time: this.getCurrentTime()
+                    };
+
+                    this.$chatHistoryList.append(template(context));
+                    this.scrollToBottom();
+                    this.$textarea.val('');
+
+                    // responses
+                    var templateResponse = Handlebars.compile($("#message-response-template").html());
+                    var contextResponse = {
+                        response: this.getRandomItem(this.messageResponses),
+                        time: this.getCurrentTime()
+                    };
+
+                    setTimeout(function () {
+                        this.$chatHistoryList.append(templateResponse(contextResponse));
+                        this.scrollToBottom();
+                    }.bind(this), 1000);
+
+                }
+
+            },
+
+            addMessage: function () {
+                this.messageToSend = this.$textarea.val()
+                this.render();
+            },
+            addMessageEnter: function (event) {
+                // enter was pressed
+                if (event.keyCode === 13) {
+                    this.addMessage();
+                }
+            },
+            scrollToBottom: function () {
+                this.$chatHistory.scrollTop(this.$chatHistory[0].scrollHeight);
+            },
+            getCurrentTime: function () {
+                return new Date().toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+            },
+            getRandomItem: function (arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+
+        };
+
+        chat.init();
+
+    })();
+</script>
+<script type="text/javascript">
+    $(".talk-AI-box").click(function () {
+        $(".chat").toggle("10");
+        $(".talk-AI-box").toggle("10");
+    })
+    $(".img-dismiss").click(function () {
+        $(".chat").toggle("10");
+        $(".talk-AI-box").toggle("0");
+    })
+    $(document).mousemove(function(event){
+        var y = event.pageY;
+        $(".talk-AI-box").offset({ top: y, right:0 })
+    });
 
 </script>
 </body>
